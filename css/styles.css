@@ -1,0 +1,434 @@
+/* =========================================================
+   HONDA MOTOS - Hoja de estilos CSS3
+   ========================================================= */
+
+/* ---------- Variables ---------- */
+:root {
+  --rojo: #cc0000;
+  --rojo-oscuro: #990000;
+  --negro: #111111;
+  --gris-oscuro: #1e1e1e;
+  --gris: #6b6b6b;
+  --gris-claro: #f3f3f3;
+  --blanco: #ffffff;
+  --sombra: 0 6px 20px rgba(0, 0, 0, 0.12);
+  --sombra-fuerte: 0 12px 30px rgba(0, 0, 0, 0.25);
+  --radio: 14px;
+  --transicion: 0.3s ease;
+}
+
+/* ---------- Reset base ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--gris-claro);
+  color: var(--negro);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Header / Navegación ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 5%;
+  background: var(--negro);
+  border-bottom: 4px solid var(--rojo);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+header .logo img {
+  height: 48px;
+  width: auto;
+  transition: transform var(--transicion);
+}
+
+header .logo:hover img {
+  transform: scale(1.06);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+nav a.area {
+  position: relative;
+  padding: 8px 16px;
+  color: var(--blanco);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-radius: 30px;
+  transition: background var(--transicion), color var(--transicion);
+}
+
+nav a.area:hover {
+  background: var(--rojo);
+}
+
+/* ---------- Secciones generales ---------- */
+main section {
+  padding: 70px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main h2 {
+  position: relative;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  padding-bottom: 12px;
+}
+
+main h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 70px;
+  height: 5px;
+  background: var(--rojo);
+  border-radius: 3px;
+}
+
+/* ---------- Inicio (Hero) ---------- */
+#inicio {
+  max-width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--blanco);
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.88), rgba(153, 0, 0, 0.75)),
+    var(--negro);
+}
+
+#inicio img {
+  width: min(380px, 80%);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-fuerte);
+  margin-bottom: 30px;
+}
+
+#inicio h1 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+#inicio p {
+  font-size: 1.25rem;
+  color: #e6e6e6;
+  font-style: italic;
+}
+
+/* ---------- Catálogo ---------- */
+#catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+#catalogo h2 {
+  grid-column: 1 / -1;
+  margin-bottom: 10px;
+}
+
+#catalogo > div {
+  display: flex;
+}
+
+.producto {
+  width: 100%;
+  background: var(--blanco);
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  border-bottom: 5px solid transparent;
+  transition: transform var(--transicion), box-shadow var(--transicion),
+    border-color var(--transicion);
+}
+
+.producto:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-fuerte);
+  border-bottom-color: var(--rojo);
+}
+
+.producto img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.producto:hover img {
+  transform: scale(1.06);
+}
+
+.producto h3 {
+  margin: 18px 20px 8px;
+  font-size: 1.25rem;
+  color: var(--rojo);
+}
+
+.producto p {
+  margin: 0 20px;
+  padding: 6px 0;
+  font-size: 0.95rem;
+  color: var(--gris);
+  border-top: 1px solid #eee;
+}
+
+.producto p:last-child {
+  margin-bottom: 14px;
+}
+
+/* ---------- Ubicación ---------- */
+#ubicacion {
+  background: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#ubicacion h2:not(:first-child) {
+  margin-top: 30px;
+}
+
+#ubicacion p {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+#ubicacion iframe {
+  display: block;
+  width: 100%;
+  height: 400px;
+  margin-top: 28px;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+/* ---------- Citas (formulario) ---------- */
+#citas {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+}
+
+#citas br {
+  display: none;
+}
+
+#citas label {
+  margin: 16px 0 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+#citas input,
+#citas select {
+  width: 100%;
+  padding: 13px 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: var(--blanco);
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color var(--transicion), box-shadow var(--transicion);
+}
+
+#citas input:focus,
+#citas select:focus {
+  border-color: var(--rojo);
+  box-shadow: 0 0 0 4px rgba(204, 0, 0, 0.15);
+}
+
+#citas button {
+  margin-top: 28px;
+  padding: 15px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--blanco);
+  background: var(--rojo);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(204, 0, 0, 0.35);
+  transition: background var(--transicion), transform var(--transicion);
+}
+
+#citas button:hover {
+  background: var(--rojo-oscuro);
+  transform: translateY(-3px);
+}
+
+#citas button:active {
+  transform: translateY(0);
+}
+
+/* ---------- Ofertas ---------- */
+#ofertas {
+  text-align: center;
+}
+
+#ofertas h2::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#ofertas p {
+  font-size: 1.15rem;
+  margin-bottom: 24px;
+}
+
+#ofertas iframe {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-fuerte);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: 40px;
+  padding: 50px 5% 30px;
+  background: var(--negro);
+  color: #d5d5d5;
+  border-top: 5px solid var(--rojo);
+}
+
+footer > div {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+footer img {
+  height: 60px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+footer h3 {
+  margin-top: 20px;
+  color: var(--blanco);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+footer nav {
+  justify-content: center;
+}
+
+footer nav a.area {
+  font-size: 0.85rem;
+  color: #d5d5d5;
+}
+
+footer article > a {
+  color: var(--rojo);
+  font-weight: 600;
+  transition: color var(--transicion);
+}
+
+footer article > a:hover {
+  color: var(--blanco);
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 4%;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  nav a.area {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  html {
+    scroll-padding-top: 130px;
+  }
+
+  main section {
+    padding: 50px 5%;
+  }
+
+  main h2 {
+    font-size: 1.6rem;
+  }
+
+  #ubicacion iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  #catalogo {
+    grid-template-columns: 1fr;
+  }
+
+  #inicio {
+    min-height: 65vh;
+  }
+}
