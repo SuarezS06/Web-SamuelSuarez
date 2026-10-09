@@ -3,23 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tarea</title>
+    <title>Honda Motos</title>
   </head>
   <body>
     <header>
-      <a href="#" class="logo">Honda</a>
+      <a href="#" class="logo"><img src="./images/logo03.webp" alt=" Logo Honda"></a>
       <nav>
         <a href="#inicio" class="area">Inicio</a>
         <a href="#catalogo" class="area">Catalogo</a>
         <a href="#ubicacion" class="area">Ubicacion</a>
+        <a href="#citas" class="area">Cita</a>
         <a href="#ofertas" class="area">Ofertas</a>
-        <a href="#redes" class="area">Redes</a>
       </nav>
     </header>
 
     <main>
       <section id="inicio" class="area">
-        <img src="./images/logo01.jpg" alt="">
+        <img src="./images/logo01.jpg" alt="Logo Principal">
         <h1>Bienvenido a Honda Motors</h1>
         <p>Aqui podras encontrar una compañera de viajes</p>
       </section>
@@ -131,6 +131,50 @@
         </article>
       </section>
 
+      <section id="citas" class="area">
+        <h2>Agenda una cita con nosotros</h2>
+        
+          <label for="nombre">Nombre Completo:</label>
+          <input type="text" id="nombre" name="nombre">
+          <br>
+
+          <label for="apellidos">Apellidos:</label>
+          <input type="text" id="apellidos" name="apellidos">
+          <br>
+
+          <label for="correo">Correo electronico</label>
+          <input type="email" id="correo" name="correo">
+          <br>
+
+          <label for="Tlf">Telefono</label>
+          <input type="tel" id="tlf" name="tlf">
+          <br>
+
+          <label for="fecha">Fecha cita</label>
+          <input type="date" id="fecha" name="fecha">
+          <br>
+
+          <label for="hora">Hora Cita</label>
+          <input type="time" id="hora" name="hora">
+          <br>
+
+          <label for="servicio">Servicios</label>
+          <select name="servicio" id="servicio">
+          <option value="">selecionar</option>
+          <option value="">Mantenimiento</option>
+          <option value="">Reparacion</option>
+          <option value="">Repuestos</option>
+          <option value="">Consulta</option>
+        </select>
+        <br>
+
+        <label for="descripcion">Descripcion</label>
+        <input type="text" id="descripcion" name="descripcion">
+        <br>
+        
+        <button type="submit">Agendar Cita</button>
+      </section>
+
       <section id="ofertas" class="area">
         <article>
           <h2>Nuevas Ofertas</h2>
@@ -160,8 +204,8 @@
     <footer id="redes" class="area">
       <div>
         <article>
-             <img src="./images/logo02.png" alt="" />
-             <h2>Mapa del sitio</h2>
+             <img src="./images/logo02.png" alt="Logo Final" />
+             <h3>Mapa del sitio</h3>
              <nav>
         <a href="#inicio" class="area">Inicio</a>
         <a href="#catalogo" class="area">Catalogo</a>
@@ -170,14 +214,12 @@
         <a href="#redes" class="area">Redes</a>
       </nav>
 
-      <h2>Contactos</h2>
+      <h3>Contactos</h3>
       <a href="ventas@motosistemahonda.com.pe">ventas@motosistemahonda.com.pe</a>
       <p>938 666 594</p>
       <p>926 414 160</p>
       <p>938 151 694</p>
         </article>
-       
-
 
       </div>
     </footer>
